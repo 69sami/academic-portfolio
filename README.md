@@ -26,3 +26,8 @@ If using a differently named repository, the default address is `https://69sami.
 
 ## After graduation
 When the B.E. degree is officially awarded, update the introduction and education timeline from “completing” and “anticipated” to confirmed completion. This prevents an admissions reviewer mistaking an expected degree for an awarded one.
+
+## Fixed left panel behavior
+On desktop (screen width over 750 px), the **left portrait/profile stays absolutely stationary**. The right content is its own scrollable pane. On mobile, both sections stack and the page scrolls normally.
+
+For an already-existing `69sami.github.io` repository, back up the old code and replace the root-level `index.html`, `styles.css`, `script.js`, and `assets/` with these files. Committing changes will trigger a new GitHub Pages deployment if Pages is already configured.

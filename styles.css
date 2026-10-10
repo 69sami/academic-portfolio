@@ -81,3 +81,33 @@ body {font-size:17px;line-height:1.75}
 @media(max-width:1100px) {.sidebar {width:305px}.sidebar-inner {max-width:242px}.main-content {margin-left:305px}.profile-portrait {width:160px;height:160px}.sidebar h1 {font-size:36px}.section {padding:65px 6%}}
 @media(max-width:750px) {.sidebar {position:relative;width:100%}.sidebar-inner {max-width:none;padding:20px 24px;grid-template-columns:118px 1fr}.main-content {margin-left:0}.profile-portrait {width:114px;height:114px;margin:0}.sidebar h1 {font-size:32px}.sidebar-role {font-size:13px}.sidebar-location {font-size:12px}.sidebar-nav a span {font-size:14px}.section {padding:60px 6%}.intro {font-size:18px}.research-grid {grid-template-columns:1fr 1fr}.research-card {padding:22px}}
 @media(max-width:500px) {.section {padding:52px 22px}.research-grid {grid-template-columns:1fr}.profile-portrait {width:108px;height:108px}.sidebar-inner {grid-template-columns:110px 1fr}.hero h2 {font-size:42px}.project h3 {font-size:21px}.project-body {padding:22px}.timeline-item {grid-template-columns:1fr}.figure-gallery {grid-template-columns:1fr}.figure-gallery img,.figure-gallery a:last-child img {height:auto;max-height:240px}.upcoming-card {padding:24px}.upcoming-card h3 {font-size:20px}.upcoming-card p {font-size:15px}.stat-grid small {font-size:10px}}
+
+
+/* Orderedlist-inspired behavior: truly stationary profile, independently scrolling content */
+@media (min-width:751px) {
+ html, body {height:100%;overflow:hidden}
+ .site-shell {height:100dvh;min-height:0}
+ .sidebar {height:100dvh;overflow:hidden}
+ .sidebar-inner {height:100%;min-height:0;display:flex;flex-direction:column;padding-top:22px;padding-bottom:19px}
+ .profile-portrait {flex-shrink:0;width:clamp(134px,10.9vw,180px);height:clamp(134px,10.9vw,180px);margin-top:18px}
+ .sidebar h1 {flex-shrink:0;margin:13px 0 7px;font-size:clamp(32px,2.65vw,40px)}
+ .sidebar-role,.sidebar-location,.brand {flex-shrink:0}
+ .sidebar-location {margin:9px 0 14px}
+ .sidebar-nav {min-height:0;overflow-y:auto;scrollbar-width:thin;flex:1;padding-top:8px;gap:0}
+ .sidebar-nav a {padding:4px 0}
+ .side-bottom {flex-shrink:0;margin-top:8px;padding-top:6px}
+ .side-social {margin-top:8px}
+ .main-content {height:100dvh;overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;scroll-behavior:smooth;max-width:none}
+ .main-content > .section {max-width:1550px}
+}
+@media (max-height:780px) and (min-width:751px) {
+ .profile-portrait {width:125px;height:125px;margin-top:9px}
+ .sidebar h1 {font-size:30px;margin:8px 0 5px}
+ .sidebar-location {margin:5px 0 9px}
+ .sidebar-nav a {padding:3px 0}
+}
+@media (max-width:750px) {
+ html,body {height:auto;overflow-x:hidden;overflow-y:auto}
+ .main-content {height:auto;overflow:visible}
+ .sidebar {height:auto;overflow:visible}
+}
